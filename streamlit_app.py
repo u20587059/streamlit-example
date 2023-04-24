@@ -9,17 +9,17 @@ import streamlit as st
 st.title("Travel World")
 st.write("The following dashboard contains information about airlines and airports from OpenFlight")
 
-col_names = ["Airline ID", "Name","Alias","IATA","ICAO","Callsign","Country","Active Airlines"]
+col_names = ["Airline ID", "Name","Alias","IATA","ICAO","Callsign","Country","Airlines"]
 airlines = pd.read_csv('airlines.dat', names = col_names)
-groupedAirlines = airlines.groupby("Country")["Active Airlines"].count().reset_index()
-st.bar_chart(groupedAirlines, x="Country", y="Active Airlines")
+groupedAirlines = airlines.groupby("Country")["Airlines"].count().reset_index()
+st.bar_chart(groupedAirlines, x="Country", y="Airlines")
 groupedAirlines
 GroupedAir = pd.DataFrame(groupedAirlines)
-most = GroupedAir['Active Airlines'].max()
-most2 = GroupedAir['Active Airlines'].idxmax()
+most = GroupedAir['Airlines'].max()
+most2 = GroupedAir['Airlines'].idxmax()
 mostAirline = GroupedAir.loc[most2, 'Country']
 
-st.write("The country with the most amount of airlines is " ,mostAirline, "with", most , " airports")
+st.write("The country with the most amount of airlines is " ,mostAirline, "with", most , " airlines")
 
 st.subheader("number of airports in every country")
 airport_col = ['Airport ID', 'Number of airports', 'City', 'Country', 'IATA', 'ICAO', 'latitude','longitude', 'Altitude', 'Time Zone', 'DST', 'Tz db time', 'Type', 'Source']
