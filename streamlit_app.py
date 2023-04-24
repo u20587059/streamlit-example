@@ -19,7 +19,7 @@ most = GroupedAir['Active Airlines'].max()
 most2 = GroupedAir['Active Airlines'].idxmax()
 mostAirline = GroupedAir.loc[most2, 'Country']
 
-st.write("The country with the most amount of airports is " ,mostAirline, "with", most , " airports")
+st.write("The country with the most amount of airlines is " ,mostAirline, "with", most , " airports")
 
 st.subheader("number of airports in every country")
 airport_col = ['Airport ID', 'Number of airports', 'City', 'Country', 'IATA', 'ICAO', 'latitude','longitude', 'Altitude', 'Time Zone', 'DST', 'Tz db time', 'Type', 'Source']
