@@ -14,6 +14,12 @@ airlines = pd.read_csv('airlines.dat', names = col_names)
 groupedAirlines = airlines.groupby("Country")["Active Airlines"].count().reset_index()
 st.bar_chart(groupedAirlines, x="Country", y="Active Airlines")
 groupedAirlines
+GroupedAir = pd.DataFrame(groupedAirlines)
+most = GroupedAir['Active Airlines'].max()
+most2 = output2['Number of airports'].idxmax()
+mostAirline = GroupedAir.loc[most2, 'Country']
+
+st.write("The country with the most amount of airports is " ,mostAirline, "with", most , " airports")
 
 st.subheader("number of airports in every country")
 airport_col = ['Airport ID', 'Number of airports', 'City', 'Country', 'IATA', 'ICAO', 'latitude','longitude', 'Altitude', 'Time Zone', 'DST', 'Tz db time', 'Type', 'Source']
