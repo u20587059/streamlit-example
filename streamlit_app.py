@@ -22,8 +22,9 @@ st.bar_chart(output, x="Country", y="Number of airports")
 output2 = pd.DataFrame(output)
 output2
 minimum = output2['Number of airports'].min()
+minn = output2['Number of airports'].idxmin()
 minimum
-minAir = output2.loc[output2['Country'] == minimum]
+minAir = output2.loc[minn, 'Country']
 minAir
 maximum = output2['Number of airports'].max()
 maximum
