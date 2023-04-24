@@ -6,7 +6,9 @@ import geopandas as gpd
 from shapely.geometry import Point
 import streamlit as st
 
-st.write("TravelWorld.com")
+st.title("Travel World")
+st.write("The following dashboard contains information about airlines and airports from OpenFlight")
+
 col_names = ["Airline ID", "Name","Alias","IATA","ICAO","Callsign","Country","Active Airlines"]
 airlines = pd.read_csv('airlines.dat', names = col_names)
 groupedAirlines = airlines.groupby("Country")["Active Airlines"].count().reset_index()
@@ -40,5 +42,6 @@ airport_locations
 
 st.map(airport_locations)
 
+st.caption("The data for this dashboard was taken from OpenFlights")
 
 
