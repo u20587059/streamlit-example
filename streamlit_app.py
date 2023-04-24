@@ -22,7 +22,6 @@ output= grouped.aggregate({'Number of airports':'count'}).reset_index()
 st.bar_chart(output, x="Country", y="Number of airports")
 
 output2 = pd.DataFrame(output)
-output2
 minimum = output2['Number of airports'].min()
 minn = output2['Number of airports'].idxmin()
 minimum
@@ -38,6 +37,8 @@ output
 latitude = airports['latitude']
 longitude = airports['longitude']
 airport_locations = pd.DataFrame(latitude).join(longitude)
+st.header("A map displaying all the airports iin all seven continents")
+st.subheader("coordinates for the locations of all airports")
 airport_locations
 
 st.map(airport_locations)
