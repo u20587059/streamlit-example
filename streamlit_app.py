@@ -24,7 +24,7 @@ output2
 minimum = output2['Number of airports'].min()
 minn = output2['Number of airports'].idxmin()
 minimum
-minAir = output2.loc[minn, 'Country']
+minAir = output2.loc[minimum, 'Country']
 minAir
 maximum = output2['Number of airports'].max()
 maximum
