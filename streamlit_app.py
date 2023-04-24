@@ -21,6 +21,10 @@ st.bar_chart(output, x="Country", y="Number of airports")
 
 minAir = airports['Number of airports'].min()
 minAir
+maxAir = airports['Number of airports'].max()
+maxAir
+avgAir = airports['Number of airports'].mean()
+avgAir
 
 output
 latitude = airports['latitude']
