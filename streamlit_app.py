@@ -19,6 +19,8 @@ grouped = airports.groupby('Country')
 output= grouped.aggregate({'Number of airports':'count'}).reset_index() 
 st.bar_chart(output, x="Country", y="Number of airports")
 
+output2 = pd.DataFrame(output)
+output2
 minAir = airports['Number of airports'].min()
 minAir
 maxAir = airports['Number of airports'].max()
