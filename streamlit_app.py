@@ -29,6 +29,7 @@ minAir
 maximum = output2['Number of airports'].max()
 maxx = output2['Number of airports'].idxmax()
 maxAir = output2.loc[maxx, 'Country']
+maxAir
 maximum
 
 output
