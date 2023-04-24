@@ -23,7 +23,7 @@ minAir = airports['Number of airports'].min()
 minAir
 maxAir = airports['Number of airports'].max()
 maxAir
-minimumCountry = airports.loc[airports['Country'] == minAir
+minimumCountry = airports.loc[airports['Country'] == minAir]
 minimumCountry
 
 output
