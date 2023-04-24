@@ -20,6 +20,7 @@ airport_col = ['Airport ID', 'Number of airports', 'City', 'Country', 'IATA', 'I
 airports = pd.read_csv('airports.dat', sep =",", names=airport_col)
 grouped = airports.groupby('Country')
 output= grouped.aggregate({'Number of airports':'count'}).reset_index() 
+output
 st.bar_chart(output, x="Country", y="Number of airports")
 
 
@@ -31,9 +32,9 @@ maximum = output2['Number of airports'].max()
 maxx = output2['Number of airports'].idxmax()
 maxAir = output2.loc[maxx, 'Country']
 
-st.write("The country with the most amount of airports is " + maxAir+ "with"+ maximum + " airports")
+st.write("The country with the most amount of airports is " ,maxAir, "with", maximum , " airports")
 
-output
+
 latitude = airports['latitude']
 longitude = airports['longitude']
 airport_locations = pd.DataFrame(latitude).join(longitude)
