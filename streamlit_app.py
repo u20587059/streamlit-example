@@ -16,7 +16,7 @@ st.bar_chart(groupedAirlines, x="Country", y="Active Airlines")
 groupedAirlines
 GroupedAir = pd.DataFrame(groupedAirlines)
 most = GroupedAir['Active Airlines'].max()
-most2 = output2['Active Airlines'].idxmax()
+most2 = GroupedAir['Active Airlines'].idxmax()
 mostAirline = GroupedAir.loc[most2, 'Country']
 
 st.write("The country with the most amount of airports is " ,mostAirline, "with", most , " airports")
