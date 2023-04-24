@@ -15,29 +15,29 @@ groupedAirlines = airlines.groupby("Country")["Active Airlines"].count().reset_i
 st.bar_chart(groupedAirlines, x="Country", y="Active Airlines")
 groupedAirlines
 
+st.subheader("number of airports in every country")
 airport_col = ['Airport ID', 'Number of airports', 'City', 'Country', 'IATA', 'ICAO', 'latitude','longitude', 'Altitude', 'Time Zone', 'DST', 'Tz db time', 'Type', 'Source']
 airports = pd.read_csv('airports.dat', sep =",", names=airport_col)
 grouped = airports.groupby('Country')
 output= grouped.aggregate({'Number of airports':'count'}).reset_index() 
 st.bar_chart(output, x="Country", y="Number of airports")
 
+
 output2 = pd.DataFrame(output)
 minimum = output2['Number of airports'].min()
 minn = output2['Number of airports'].idxmin()
-minimum
 minAir = output2.loc[minimum, 'Country']
-minAir
 maximum = output2['Number of airports'].max()
 maxx = output2['Number of airports'].idxmax()
 maxAir = output2.loc[maxx, 'Country']
-maxAir
-maximum
+
+st.write("The country with the most amount of airports is " + maxAir+ "with"+ maximum + " airports")
 
 output
 latitude = airports['latitude']
 longitude = airports['longitude']
 airport_locations = pd.DataFrame(latitude).join(longitude)
-st.header("A map displaying all the airports iin all seven continents")
+st.header("A map displaying all the airports on all seven continents")
 st.subheader("coordinates for the locations of all airports")
 airport_locations
 
