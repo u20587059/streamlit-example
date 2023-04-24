@@ -23,8 +23,8 @@ minAir = airports['Number of airports'].min()
 minAir
 maxAir = airports['Number of airports'].max()
 maxAir
-avgAir = airports['Number of airports'].mean()
-avgAir
+minimumCountry = airports.loc[minAir, "Country"]
+minimumCountry
 
 output
 latitude = airports['latitude']
